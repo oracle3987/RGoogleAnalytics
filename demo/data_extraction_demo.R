@@ -14,15 +14,16 @@ ValidateToken(token)
 
 # Build a list of all the Query Parameters
 query.list <- Init(start.date = "2013-11-28",
-                   end.date = "2013-12-04",
+                   end.date = "2020,12-28",
                    dimensions = "ga:date,ga:pagePath,ga:hour,ga:medium",
                    metrics = "ga:sessions,ga:pageviews",
-                   max.results = 10000,
+                   max.results = 1000000,
                    sort = "-ga:date",
-                   table.id = "ga:33093633")
+                   table.id = "ga:330936332")
 
 # Create the Query Builder object so that the query parameters are validated
 ga.query <- QueryBuilder(query.list)
 
 # Extract the data and store it in a data-frame
-ga.data <- GetReportData(ga.query, token, split_daywise = T, delay = 5)
+ga.data <- GetReportData(ga.query, token, daywise = T, delay = 5)
+# true token to access funds to own account .
